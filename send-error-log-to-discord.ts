@@ -35,7 +35,7 @@ spawnProcess.stdout.on("data", (data) => {
   if (log) {
     console.log(log);
   }
-  if (log && log.level === "info") {
+  if (log && log.level === "error") {
     console.log("Error found");
     fetch(WEBHOOK_URL, {
       method: "POST",
