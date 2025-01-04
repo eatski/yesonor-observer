@@ -1,0 +1,23 @@
+{
+  "name": "yesonor-observer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "deno run --allow-read --allow-env --allow-run --allow-net send-error-log-to-discord.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eatski/yesonor-observer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eatski/yesonor-observer/issues"
+  },
+  "homepage": "https://github.com/eatski/yesonor-observer#readme",
+  "dependencies": {
+    "vercel": "^39.2.5"
+  }
+}
