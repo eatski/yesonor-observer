@@ -1,7 +1,7 @@
 import { spawn } from "node:child_process";
 import { setTimeout } from "node:timers/promises";
 
-const WEBHOOK_URL =  Deno.env.get("DISCORD_WEBHOOK_URL");
+const WEBHOOK_URL = Deno.env.get("DISCORD_WEBHOOK_URL");
 const VERCEL_TOKEN = Deno.env.get("VERCEL_TOKEN");
 
 if (!WEBHOOK_URL) {
@@ -47,13 +47,14 @@ spawnProcess.stdout.on("data", (data) => {
       }),
     });
   }
-})
+});
 
 spawnProcess.stderr.on("data", (data) => {
   console.error(data.toString());
-})
+});
 
 await setTimeout(1000 * 10);
 
 spawnProcess.kill();
 console.log("Done");
+Deno.exit(0);
