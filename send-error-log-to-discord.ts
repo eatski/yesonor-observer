@@ -6,12 +6,12 @@ const VERCEL_TOKEN = Deno.env.get("VERCEL_TOKEN");
 
 if (!WEBHOOK_URL) {
   console.error("DISCORD_WEBHOOK_URL is not set");
-  process.exit(1);
+  Deno.exit(1);
 }
 
 if (!VERCEL_TOKEN) {
   console.error("VERCEL_TOKEN is not set");
-  process.exit(1);
+  Deno.exit(1);
 }
 
 const safeJsonParse = (str: string) => {
