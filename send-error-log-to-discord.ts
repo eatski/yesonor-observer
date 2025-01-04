@@ -1,8 +1,8 @@
 import { spawn } from "node:child_process";
 import { setTimeout } from "node:timers/promises";
 
-const WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
-const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
+const WEBHOOK_URL =  Deno.env.get("DISCORD_WEBHOOK_URL");
+const VERCEL_TOKEN = Deno.env.get("VERCEL_TOKEN");
 
 if (!WEBHOOK_URL) {
   console.error("DISCORD_WEBHOOK_URL is not set");
