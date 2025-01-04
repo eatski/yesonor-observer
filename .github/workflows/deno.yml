@@ -34,4 +34,4 @@ jobs:
           deno-version: v1.x
 
       - name: Run linter
-        run: deno start
+        run: deno run start
