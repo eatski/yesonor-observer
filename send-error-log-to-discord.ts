@@ -31,12 +31,11 @@ const spawnProcess = spawn("npx", [
   "https://iesona.com",
 ]);
 spawnProcess.stdout.on("data", (data) => {
-  const log = safeJsonParse(data.toString());
-  if (log) {
-    console.log(log);
-  }
+  const logText = data.toString();
+  console.info(logText);
+  const log = safeJsonParse(logText);
   if (log && log.level === "error") {
-    console.log("Error found");
+    console.info("Error found");
     fetch(WEBHOOK_URL, {
       method: "POST",
       headers: {
@@ -56,5 +55,5 @@ spawnProcess.stderr.on("data", (data) => {
 await setTimeout(1000 * 10);
 
 spawnProcess.kill();
-console.log("Done");
+console.info("Done");
 Deno.exit(0);
