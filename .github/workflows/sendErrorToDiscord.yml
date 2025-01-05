@@ -19,8 +19,7 @@ permissions:
 jobs:
   log:
     runs-on: ubuntu-latest
-    
-
+    environment: main
     steps:
       - name: Setup repo
         uses: actions/checkout@v4
